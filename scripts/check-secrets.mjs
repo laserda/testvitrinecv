@@ -19,6 +19,7 @@ const IGNORED_DIRS = new Set([
   'coverage',
   'playwright-report',
   'test-results',
+  'blob-report',
 ]);
 const BINARY_EXTENSIONS = new Set([
   '.png',
