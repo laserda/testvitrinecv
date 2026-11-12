@@ -1,3 +1,19 @@
 node_modules/
 dist/
 .env
+.env.*
+!.env.example
+
+# Résultats de tests / Test output
+coverage/
+playwright-report/
+test-results/
+blob-report/
+
+# Éditeurs et systèmes / Editors and OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.log

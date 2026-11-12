@@ -1,0 +1,3 @@
+# Vérification avant commit : formatage + lint des fichiers indexés, puis typage TypeScript du projet.
+npx --no-install lint-staged
+npm run typecheck
