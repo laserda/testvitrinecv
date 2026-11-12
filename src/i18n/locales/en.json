@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "title": "Cv en Ligne"
+  },
+  "language": {
+    "label": "Language",
+    "fr": "Français",
+    "en": "English"
+  },
+  "home": {
+    "title": "Welcome to Cv en Ligne",
+    "intro": "This site will soon present an online résumé. This sample text is displayed in English.",
+    "formatsTitle": "Regional formats",
+    "dateLabel": "Sample date",
+    "amountLabel": "Sample amount",
+    "timeZoneLabel": "Time zone"
+  },
+  "validation": {
+    "required": "This field is required.",
+    "tooShort": "This value is too short.",
+    "tooLong": "This value is too long.",
+    "email": "Enter a valid email address.",
+    "phone": "Enter a valid phone number.",
+    "pattern": "This value has an invalid format."
+  }
+}

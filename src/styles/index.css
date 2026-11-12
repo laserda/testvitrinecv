@@ -1,0 +1,137 @@
+/*
+ * Base visuelle sobre, mobile-first. Aucune couleur, police ni composant de marque
+ * (la charte graphique viendra de US-1.2).
+ */
+:root {
+  --color-text: #1a1a1a;
+  --color-background: #ffffff;
+  --color-muted: #4a4a4a;
+  --color-border: #767676;
+  --color-focus: #005fcc;
+  --space: 1rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin: 0 0 var(--space);
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: calc(var(--space) * 1.5) 0 calc(var(--space) / 2);
+}
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(var(--space) / 2);
+  padding: calc(var(--space) / 2) var(--space);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.container {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: var(--space);
+}
+
+.language-switcher {
+  display: flex;
+  gap: calc(var(--space) / 2);
+}
+
+.language-switcher button {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.5rem 0.75rem;
+  font: inherit;
+  color: var(--color-text);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.language-switcher button[aria-pressed='true'] {
+  color: var(--color-background);
+  background: var(--color-text);
+  border-color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.formats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+  margin: 0;
+}
+
+.formats dt {
+  color: var(--color-muted);
+}
+
+.formats dd {
+  margin: 0 0 calc(var(--space) / 2);
+  font-weight: 600;
+}
+
+@media (min-width: 40rem) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  .container {
+    padding: calc(var(--space) * 2) var(--space);
+  }
+
+  .formats {
+    grid-template-columns: max-content 1fr;
+    column-gap: calc(var(--space) * 2);
+  }
+
+  .formats dd {
+    margin: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
