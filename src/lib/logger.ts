@@ -12,11 +12,14 @@ export const PHONE_MASK = '[téléphone masqué]';
 const EMAIL_IN_TEXT = /[^\s@<>()[\]\\,;:"']+@[^\s@<>()[\]\\,;:"']+\.[A-Za-z]{2,}/g;
 /** Suite d'au moins 8 chiffres pouvant contenir espaces, points, tirets, parenthèses et un +. */
 const PHONE_IN_TEXT = /[+(]*\d[\d\s().+-]{6,}\d/g;
+/** Date ISO (AAAA-MM-JJ), à ne pas confondre avec un téléphone. */
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 const SENSITIVE_KEYS =
   /^(e-?mail|courriel|phone|tel|telephone|téléphone|mobile|password|mot_?de_?passe)$/i;
 
 export function maskPersonalData(text: string): string {
   return text.replace(EMAIL_IN_TEXT, EMAIL_MASK).replace(PHONE_IN_TEXT, (match) => {
+    if (ISO_DATE.test(match)) return match;
     const digits = match.replace(/\D/g, '');
     return digits.length >= 8 ? PHONE_MASK : match;
   });

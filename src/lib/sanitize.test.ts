@@ -35,6 +35,7 @@ describe('isSafeUrl / safeUrl', () => {
     'java\tscript:alert(1)',
     'data:text/html,<script>alert(1)</script>',
     '//evil.example',
+    '/\\evil.example',
     'n importe quoi',
   ])('refuse %s', (url) => {
     expect(isSafeUrl(url)).toBe(false);

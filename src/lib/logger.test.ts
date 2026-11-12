@@ -16,6 +16,11 @@ describe('maskPersonalData', () => {
       'Le 14/10/2026, 15 000 FCFA, étape 3',
     );
   });
+  it('conserve les dates ISO', () => {
+    expect(maskPersonalData('Envoyé le 2026-10-14T23:30:00Z')).toBe(
+      'Envoyé le 2026-10-14T23:30:00Z',
+    );
+  });
 });
 
 describe('redact', () => {

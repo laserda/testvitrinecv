@@ -40,7 +40,8 @@ const SAFE_PROTOCOLS = new Set(['http:', 'https:', 'mailto:', 'tel:']);
 export function isSafeUrl(value: string): boolean {
   // eslint-disable-next-line no-control-regex -- retrait des caractères invisibles d'évasion
   const cleaned = value.replace(/[\u0000-\u0020\u007F]/g, '');
-  if (cleaned.startsWith('/') && !cleaned.startsWith('//')) return true;
+  // Chemin relatif au site ; `//` et `/\` seraient interprétés comme un autre domaine.
+  if (/^\/(?![/\\])/.test(cleaned)) return true;
   try {
     return SAFE_PROTOCOLS.has(new URL(cleaned).protocol);
   } catch {
