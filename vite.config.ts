@@ -5,6 +5,7 @@ import { defineConfig } from 'vitest/config';
 /**
  * Politique de sécurité du contenu (CSP) injectée uniquement dans le build de production :
  * le serveur de développement de Vite a besoin de scripts en ligne (rechargement à chaud).
+ * À garder en phase avec l'en-tête Content-Security-Policy de nginx.conf.
  */
 export const CONTENT_SECURITY_POLICY = [
   "default-src 'self'",

@@ -97,12 +97,18 @@ docker compose -p demo-ticket-us-1-1-a down --rmi local
 Fichiers : `Dockerfile` (build Vite puis nginx), `nginx.conf` (en-têtes de sécurité, CSP),
 `docker-compose.yml`, `.dockerignore`.
 
-Pour exécuter les outils sans Node installé sur la machine, par exemple :
+Pour exécuter les outils sans Node installé sur la machine, par exemple (le volume anonyme
+`/app/node_modules` évite d'écrire un `node_modules` Linux dans le dossier de l'hôte) :
 
 ```bash
-docker run --rm -v "$PWD":/app -w /app node:24.22.3-bookworm sh -c "npm ci && npm run lint && npm run test:unit"
-docker run --rm -v "$PWD":/app -w /app mcr.microsoft.com/playwright:v1.65.0-noble sh -c "npm ci && npm test"
+docker run --rm -v "$PWD":/app -v /app/node_modules -w /app node:24.22.3-bookworm \
+  sh -c "npm ci && npm run lint && npm run test:unit"
+docker run --rm -v "$PWD":/app -v /app/node_modules -w /app \
+  mcr.microsoft.com/playwright:v1.65.0-noble sh -c "npm ci && npm test"
 ```
+
+L'image Playwright embarque sa propre version de Node : `npm ci` y affiche un simple
+avertissement `EBADENGINE` (non bloquant), la version de référence restant 24.22.3.
 
 ## Conventions
 
