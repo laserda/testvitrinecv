@@ -1,0 +1,15 @@
+.git
+.husky
+node_modules
+dist
+coverage
+playwright-report
+test-results
+blob-report
+.env
+.env.*
+!.env.example
+*.log
+Dockerfile
+docker-compose.yml
+.dockerignore

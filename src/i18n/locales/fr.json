@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "title": "Cv en Ligne"
+  },
+  "language": {
+    "label": "Langue",
+    "fr": "Français",
+    "en": "English"
+  },
+  "home": {
+    "title": "Bienvenue sur Cv en Ligne",
+    "intro": "Ce site présentera bientôt un CV en ligne. Ce texte d'exemple s'affiche en français.",
+    "formatsTitle": "Formats régionaux",
+    "dateLabel": "Date d'exemple",
+    "amountLabel": "Montant d'exemple",
+    "timeZoneLabel": "Fuseau horaire"
+  },
+  "validation": {
+    "required": "Ce champ est obligatoire.",
+    "tooShort": "Cette valeur est trop courte.",
+    "tooLong": "Cette valeur est trop longue.",
+    "email": "Saisissez une adresse email valide.",
+    "phone": "Saisissez un numéro de téléphone valide.",
+    "pattern": "Le format de cette valeur est incorrect."
+  }
+}
